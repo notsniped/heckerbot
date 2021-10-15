@@ -27,10 +27,10 @@ try
     echo "- Complete!"
 )
 catch || {
-   case $ex_code in
+   case $exc_code in
         *)
             echo "! Error installing modules"
-            throw $ex_code
+            throw $exc_code
         ;;
     esac
 }
