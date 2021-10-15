@@ -12,8 +12,13 @@ for linux run linux_install.sh
 
 # features
 • A working currency system using pickle module
+
 • Ability to add bot admins (can use add commands)
+
 • Moderation
+
 • Slash commands
+
 • Reddit commands (meme, softwaregore, linuxmeme)
+
 More coming soon
