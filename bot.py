@@ -48,14 +48,14 @@ if con == 1:
 elif con == 2:
     log = not log
 intents = discord.Intents.all()
-errHandlerVer = 'v1.1'
-botVer = 'v1.3'
-currencyVer = 'v1.0'
+errHandlerVer = 'v1'
+botVer = 'v1'
+currencyVer = 'v1'
 if os.name == 'nt':
     os.system('cls')
 else:
     os.system('clear')
-owner = 'fstab.goldfish#'
+owner = 'fstab.goldfish#5794'
 homedir = os.path.expanduser("~")
 client = commands.Bot(command_prefix=".", intents=intents)
 slash = SlashCommand(client, sync_commands=True)
@@ -215,26 +215,6 @@ async def on_ready():
         print(id)
     print(colors.end)
     print('==================')
-    print('System info')
-    print('Running as: ' + str(os.system("whoami")))
-    print('------------------')
-    print('Os name: ' + str(os.name))
-    print('------------------')
-    print('Current working dir: ' + str(os.getcwd()))
-    print('------------------')
-    try:
-        botpath = 'F:\\bot\\src\\bot\.py'
-        botsize = os.path.getsize(botpath)
-        print('Bot file size: ' + botsize)
-        print('------------------')
-    except FileNotFoundError:
-        if os.name == 'posix':
-            try:
-                 print('Bot file size: ' + os.path.getsize('/sdcard/bot/bot.py'))
-                 print('------------------')
-            except FileNotFoundError:
-                print('Bot file size: ' + os.path.getsize(str(os.getcwd() + '/bot.py')))
-                print('------------------')
 
 # Error handler #
 @client.event
@@ -289,20 +269,7 @@ async def on_message_delete(message):
     guild = client.guilds[0]
     channel = message.channel
     snipe_message_author[message.channel.id] = message.author
-    snipe_message_content[message.channel.id] = message.content
-    if bool(log) == True:
-        # with open('F:\\bot\\logs\\log.txt', 'a') as f:
-        #     f.write(f'[{current_time}]Message deleted by {snipe_message_author[channel.id]}.\n   Content:{snipe_message_content[channel.id]}\n')
-        #     f.close()
-        if message.guild.id == 876826249207640096:
-            c = client.get_channel(881181406582165525)
-            em = discord.Embed(name = f"Last deleted message in #{channel.name}", description = snipe_message_content[channel.id])
-            em.set_footer(text = f"This message was sent by {snipe_message_author[channel.id]}")
-            await c.send(embed = em)
-        else:
-            pass
-    else:
-        pass
+    snipe_message_content[message.channel.id] = message.conten
 
 @client.event
 async def on_message_edit(message_before, message_after):
@@ -316,44 +283,6 @@ async def on_message_edit(message_before, message_after):
     after = message_after.content
     if any(x in message_after.content.lower() for x in bad):
         await message_after.delete()
-    if bool(log):
-        if guild == 876826249207640096:
-            c = client.get_channel(881199227190013992)
-            em = discord.Embed(description = f"**Message before**: {message_before.content}\n**Message after**: {message_after.content}")
-            em.set_footer(text = f"This message was edited by {message_before.author}")
-            await c.send(embed = em)
-        else:
-            pass
-    else:
-        pass
-
-@client.event
-async def on_member_join(member):
-    now = datetime.datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    if bool(log) == True:
-        if os.name == 'nt':
-            with open('F:\\bot\\logs\\log.txt', 'a') as f:
-                f.write(f'[{current_time}]{member} joined {guild.name}\n')
-                f.close()
-        else:
-            pass
-    else:
-        pass
-
-@client.event
-async def on_member_remove(member):
-    now = datetime.datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    if bool(log) == True:
-        if os.name == 'nt':
-            with open('F:\\bot\\logs\\log.txt', 'a') as f:
-                f.write(f'[{current_time}]{member}{colors.end} left {guild.name}\n')
-                f.close()
-        else:
-            pass
-    else:
-        pass
 
 @client.event
 async def on_message(message):
@@ -1258,23 +1187,8 @@ async def monthly(message):
         pass
 
 @client.command()
-async def dev_claim(message):
-    if message.author.id == 705462972415213588:
-        member_data = load_member_data(message.author.id)
-        member_data.wallet += 69420
-        await message.channel.send('You claimed 69,420 coins :sunglasses:')
-        save_member_data(message.author.id, member_data)
-    elif message.author.id == 795986008680300565:
-        member_data = load_member_data(message.author.id)
-        member_data.wallet += 69
-        await message.channel.send('You claimed 69 coins')
-        save_member_data(message.author.id, member_data)
-    else:
-        await message.channel.send('Are you bot developer?')
-
-@client.command()
 async def wipe_user(ctx, *, user : discord.User):
-    if ctx.message.author.id == 705462972415213588:
+    if ctx.message.author.id in ids:
         now = datetime.datetime.now()
         current_time = now.strftime("%H:%M:%S")
         member_data = load_member_data(user.id)
