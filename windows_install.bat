@@ -1,6 +1,6 @@
 @echo off
 echo Installing....
-timeout 1 /nobreak > nul
+timeout /t 1 /nobreak > nul
 pip install praw
 pip install discord
 pip install discord-py-slash-commmand
