@@ -24,8 +24,7 @@ try
     pip install praw > /dev/null
     echo "- Installed praw!"
     pip install discord-py-slash-command > /dev/null
-
-
+    echo "- Complete!"
 )
 catch || {
    case $ex_code in
