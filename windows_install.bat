@@ -2,7 +2,7 @@
 echo Installing....
 timeout 1 /nobreak > nul
 pip install praw
-pip install 
+pip install discord
 pip install discord-py-slash-commmand
 pip install pickle
 pip install requests
