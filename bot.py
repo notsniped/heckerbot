@@ -608,7 +608,7 @@ async def ihadastroke(ctx):
 
 @client.command()
 async def shutdown(ctx):
-    if ctx.message.author.id == 705462972415213588:
+    if ctx.message.author.id in ids:
         def check(msg):
             return msg.author == ctx.message.author and msg.channel == ctx.message.channel and (msg.content)
         
@@ -760,37 +760,6 @@ async def softwaregore(ctx):
     embed = discord.Embed(title = submission.title)
     embed.set_image(url=submission.url)
     await ctx.send(embed = embed)
-
-@client.command()
-@commands.cooldown(1, 30, commands.BucketType.user)
-async def guess(ctx):
-    now = datetime.datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    if bool(currency) == False:
-        await message.channel.send('Currency is disabled')
-        return
-    else:
-        pass
-    member_data = load_member_data(ctx.message.author.id)
-    if int(member_data.wallet) >= value:
-        await ctx.reply(f'You have reached max value for your wallet ({value})')
-        return
-    else:
-        pass
-    await message.channel.send('Guess a number from 1 to 10')
-
-    def check(msg):
-        return msg.author == message.author and msg.channel == message.channel and int(msg.content) in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    msg = await client.wait_for("message", check=check)
-
-    if int(msg.content) == x:
-        coins = randint(1, 100)
-        await message.channel.send(f"Correct, you earned {coins} coins")
-        member_data.wallet += coins
-        save_member_data(message.author.id, member_data)
-    else:
-        await message.channel.send(f"Nope it was {x}")
 
 @client.command(aliases=['sus'])
 async def isSus(ctx, *, user : discord.User):
