@@ -42,6 +42,7 @@ try
     if [ $inp == "y" ]
     then
         python $PWD/bot.py
+        exit
     elif [ $inp == "n" ]
     then
         echo "- Exiting..."
