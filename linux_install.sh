@@ -37,6 +37,12 @@ try
     echo "- Installing slash commands..."
     pip install discord-py-slash-command 1&>/dev/null
     echo "- Complete!"
+    echo -n "? Would you like to run the file? (y/n):"
+    read inp
+    if [ $inp == "y" ]
+    then
+        python 
+    fi
 )
 catch || {
    case $exc_code in
