@@ -16,14 +16,18 @@ function catch()
     (( $SAVED_OPT_E )) && set +e
     return $exception_code
 }
+clear
 echo "- Installing modules..."
 try
 (
-    pip install discord > /dev/null
+    echo "- Installing discord..."
+    pip install discord 1&>/dev/null
     echo "- Installed discord!"
-    pip install praw > /dev/null
+    echo "- Installing praw..."
+    pip install praw 1&>/dev/null
     echo "- Installed praw!"
-    pip install discord-py-slash-command > /dev/null
+    echo "- Installing slash commands..."
+    pip install discord-py-slash-command 1&>/dev/null
     echo "- Complete!"
 )
 catch || {
