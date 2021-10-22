@@ -42,6 +42,13 @@ try
     if [ $inp == "y" ]
     then
         python 
+    elif [ $inp == "n" ]
+    then
+        echo "- Exiting..."
+        exit
+    else
+        echo "! Invalid input. Exiting"
+        exit
     fi
 )
 catch || {
