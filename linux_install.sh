@@ -42,7 +42,7 @@ try
     if [ $inp == "y" ]
     then
         python $PWD/bot.py
-        return
+        exit
     elif [ $inp == "n" ]
     then
         echo "- Exiting..."
@@ -55,7 +55,7 @@ try
 catch || {
    case $exc_code in
         *)
-            echo "! Error installing modules"
+            echo "! An error occurred"
             throw $exc_code
         ;;
     esac
