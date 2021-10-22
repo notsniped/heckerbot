@@ -41,7 +41,7 @@ try
     read inp
     if [ $inp == "y" ]
     then
-        python 
+        python $PWD/bot.py
     elif [ $inp == "n" ]
     then
         echo "- Exiting..."
