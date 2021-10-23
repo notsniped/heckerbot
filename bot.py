@@ -50,7 +50,7 @@ if os.name == 'nt':
     os.system('cls')
 else:
     os.system('clear')
-owner = 'fstab.goldfish#5794'
+owner = 'thatOneArchUser#5794'
 homedir = os.path.expanduser("~")
 client = commands.Bot(command_prefix=".", intents=intents)
 slash = SlashCommand(client, sync_commands=True)
