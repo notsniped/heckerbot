@@ -10,6 +10,10 @@ it is in the first lines
 To install for windows run windows_install.bat
 for linux run linux_install.sh
 
+# editor
+This repo contains a database editor, it can edit
+the data of a user like a users money amount or xp
+
 # features
 • A working currency system using pickle module
 
