@@ -8,7 +8,8 @@ it is in the first lines
 
 # install
 To install for windows run windows_install.bat
-for linux run linux_install.sh
+
+For linux run `chmod +x linux_install.sh` and then `./linux_install.sh`
 
 # editor
 This repo contains a database editor, it can edit
