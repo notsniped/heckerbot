@@ -23,12 +23,7 @@ ids = [
     #paste your discord id here
 ]
 bad = [
-    'fuck',
-    'asshole',
-    'nigga',
-    'motherfucker',
-    'fuckyou',
-    'dick'
+    #banned words list here
 ]
 console = False
 log = True
@@ -67,21 +62,6 @@ reddit = praw.Reddit(client_id='_pazwWZHi9JldA',
                      user_agent='idk', check_for_async=False)
 ### Startup/variables end ###
 
-### Command variables ###
-beg = True
-fish = True
-work = True
-daily = True
-monthly = True
-weekly = True
-snipe = True
-edit = True
-shop = True
-inventory = True
-buy = True
-networth = True
-lbin = True
-ah = True
 ### Functions and classes ###
 data_filename = homedir + "\\database.pickle"
 
