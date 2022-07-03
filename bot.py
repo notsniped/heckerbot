@@ -249,7 +249,7 @@ async def on_message_delete(message):
     guild = client.guilds[0]
     channel = message.channel
     snipe_message_author[message.channel.id] = message.author
-    snipe_message_content[message.channel.id] = message.conten
+    snipe_message_content[message.channel.id] = message.content
 
 @client.event
 async def on_message_edit(message_before, message_after):
