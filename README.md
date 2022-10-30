@@ -1,4 +1,7 @@
 # heckerbot
+***IMPORTANT NOTICE: The original owner of this repository has transferred over ownership to [notsniped](https://github.com/notsniped), and has deleted their account. This repository is not being maintained anymore and will NOT be updated. We will only keep it for historical purposes.* However, we do have a newer fork of Heckerbot [here.](https://github.com/PyBotDevs/isobot) (isobot)**
+
+
 Hecker bot is a discord bot written in python.
 It's prefix is "."
 To run it, go into the last line and put the bot
